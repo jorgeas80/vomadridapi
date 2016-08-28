@@ -49,24 +49,19 @@ var movieSchema = mongoose.Schema({
     movie_showtimes: []
 });
 
-var gradeSchema = mongoose.Schema({
-    student: String,
-    grade: Number,
-    assignment: String
-});
-
 var movie = mongoose.model('Movie', movieSchema);
-var grade = mongoose.model('Grade', gradeSchema);
 
-app.get('/', function(req, res) {
-    movie.findOne(function(err, doc) {
+// TODO: We should get all the data here using mongoose
+app.get('/v2', function(req, res) {
+    movie.find(function(err, doc) {
         log.info(doc);
         res.send(doc);
     });
 
 });
 
-app.get('/yo', function(req, res) {
+// Using mongodb driver, it works
+app.get('/v1', function(req, res) {
     MongoClient.connect(mongodb_uri, function(err, db) {
         assert.equal(err, null);
         log.info('Mongodb connected');
@@ -82,7 +77,6 @@ app.get('/yo', function(req, res) {
 
     })
 
-    //res.send('YO!');
 });
 
 var server = app.listen(3000, function() {
