@@ -1,0 +1,33 @@
+{
+  "name": "vomadridapi",
+  "version": "1.0.0",
+  "description": "REST API for vomadrid project",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/jorgeas80/vomadridapi.git"
+  },
+  "keywords": [
+    "api",
+    "rest"
+  ],
+  "author": "Jorge Arévalo <jorgeas80@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jorgeas80/vomadridapi/issues"
+  },
+  "homepage": "https://github.com/jorgeas80/vomadridapi#readme",
+  "dependencies": {
+    "bunyan": "^1.8.1",
+    "cors": "^2.8.0",
+    "express": "^4.14.0",
+    "mongoose": "^4.5.10"
+  },
+  "devDependencies": {
+    "nodemon": "^1.10.2"
+  }
+}
